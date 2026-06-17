@@ -2,13 +2,17 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 
+def build_payload():
+    return {
+        "message": "Hello Harness",
+        "week": 1,
+        "topics": ["git", "docker", "yaml"],
+    }
+
+
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        payload = {
-            "message": "Hello Harness",
-            "week": 1,
-            "topics": ["git", "docker", "yaml"],
-        }
+        payload = build_payload()
         body = json.dumps(payload, indent=2).encode("utf-8")
 
         self.send_response(200)

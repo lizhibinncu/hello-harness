@@ -49,6 +49,7 @@ git log --oneline
 
 ```text
 config.example.yaml
+.harness/pipeline.yaml
 harness-pipeline.yaml
 compose.yaml
 ```

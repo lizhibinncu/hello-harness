@@ -18,7 +18,9 @@ hello-harness/
   Dockerfile            # 告诉 Docker 如何构建镜像
   compose.yaml          # 告诉 Docker Compose 如何启动服务
   config.example.yaml   # YAML 语法练习
-  harness-pipeline.yaml # Harness Open Source 风格的 pipeline 示例
+  .harness/pipeline.yaml # Harness 会读取的 CI pipeline
+  harness-pipeline.yaml  # 额外的 pipeline 示例
+  test_app.py            # 最小单元测试
 ```
 
 ## 今天先记住三个概念
@@ -46,8 +48,8 @@ docker compose down
 Harness Pipeline 可以自动执行你手工敲的命令，例如：
 
 ```bash
-docker build -t hello-harness:week1 .
-python app.py
+python -m py_compile app.py test_app.py
+python -m unittest -v
 ```
 
 也就是说，先理解本地命令，再理解 pipeline，会轻松很多。
