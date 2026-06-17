@@ -1,0 +1,21 @@
+version: 1
+kind: pipeline
+spec:
+  stages:
+    - name: python ci
+      type: ci
+      spec:
+        steps:
+          - name: python syntax
+            type: run
+            spec:
+              container: python:3.12-slim
+              script: |-
+                python -m py_compile app.py test_app.py
+
+          - name: unit tests
+            type: run
+            spec:
+              container: python:3.12-slim
+              script: |-
+                python -m unittest -v
