@@ -36,7 +36,7 @@ git status
 git add .
 git commit -m "first week practice"
 docker build -t hello-harness:week1 .
-docker run --rm -p 8080:8080 hello-harness:week1
+docker run --rm -p 19080:8080 hello-harness:week1
 docker compose up --build
 docker compose down
 ```
