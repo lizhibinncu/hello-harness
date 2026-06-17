@@ -1,0 +1,13 @@
+project:
+  name: hello-harness
+  week: 1
+  enabled: true
+
+topics:
+  - git
+  - docker
+  - yaml
+
+server:
+  host: 0.0.0.0
+  port: 8080

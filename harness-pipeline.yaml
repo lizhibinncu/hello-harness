@@ -1,0 +1,19 @@
+kind: pipeline
+spec:
+  stages:
+    - type: ci
+      spec:
+        steps:
+          - name: build image
+            type: run
+            spec:
+              container: docker:29-cli
+              script: |-
+                docker build -t hello-harness:week1 .
+          - name: inspect files
+            type: run
+            spec:
+              container: alpine:3.22
+              script: |-
+                ls -la
+                cat config.example.yaml

@@ -1,0 +1,6 @@
+services:
+  hello:
+    build: .
+    image: hello-harness:week1
+    ports:
+      - "8080:8080"
